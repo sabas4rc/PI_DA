@@ -42,9 +42,9 @@ pip install -r requirements.txt
 
 ## Extraccion de datos
 La extraccion de datos se realizó desde las siguinetes APIs:
-1. API CoinGecko para extraer información sobre la moneda en sí misma (USD). El procedmiento lo puedes ver aca [API Coingecko](Notebook\data_extrac_API_Coingecko.ipynb)
-2. API Binance para obtener los precios de apertura cierre, maximos minimos y spread. [API Binance](Notebook\data_spread_API_Binance.ipynb)
-3. API yfinance para obtener los precios históricos diarios de los bonos del tesoro de USA. [API yfinance](Notebook\data_bonos_API_yfinance.ipynb)
+1. API CoinGecko para extraer información sobre la moneda en sí misma (USD). El procedmiento lo puedes ver aca [API Coingecko](Notebook/data_extrac_API_Coingecko.ipynb)
+2. API Binance para obtener los precios de apertura cierre, maximos minimos y spread. [API Binance](Notebook/data_spread_API_Binance.ipynb)
+3. API yfinance para obtener los precios históricos diarios de los bonos del tesoro de USA. [API yfinance](Notebook/data_bonos_API_yfinance.ipynb)
 
 Estos datos luego almacenados en una base de datos con el nombre de `cripto_db` en MySQL, para luego ser consumidos en los analisis posteriores.
 
