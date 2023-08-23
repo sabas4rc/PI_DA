@@ -14,7 +14,7 @@
 
 # Contexto
 
-Somos Analistas de Datos en la empresa de servicios financieros **ACInvest Inc** que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y el potencial de oportunidades de inversión para los clientes. La empresa me asignó la tarea de realizar un análisis exhaustivo para entender mejor el mercado de criptomonedas y presentar los hallazgos y recomendaciones en un informe detallado.
+Somos Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc***, que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y el potencial de oportunidades de inversión para los clientes. La empresa me asignó la tarea de realizar un análisis exhaustivo para entender mejor el mercado de criptomonedas y presentar los hallazgos y recomendaciones en un informe detallado.
 
 ## Contenido
 
