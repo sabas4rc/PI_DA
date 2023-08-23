@@ -7,13 +7,14 @@
 </h1>
  
 # <h1 align="center">**`Cryptocurrency Market Data Analytics`**</h1>
+¡Bienvenidos al último proyecto individual 2 de la etapa de labs! En esta ocasión, deberán hacer un trabajo situándose en el rol de un ***Data Analyst***.
+<p align='center'>
+<img src = 'https://www.clarin.com/img/2023/06/14/WJlAYJhAg_360x240__1.jpg' height = 200>
+<p>
 
+# Contexto
 
-
-
-# Análisis de Datos de Criptomonedas
-
-Este proyecto consiste en el análisis exploratorio de datos de criptomonedas utilizando Python y diversas bibliotecas de análisis de datos. Se exploran datos relacionados con precios, capitalización de mercado, volumen de negociación y otros aspectos relevantes de diferentes criptomonedas.
+Somos Analistas de Datos en la empresa de servicios financieros **ACInvest Inc** que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y el potencial de oportunidades de inversión para los clientes. La empresa me asignó la tarea de realizar un análisis exhaustivo para entender mejor el mercado de criptomonedas y presentar los hallazgos y recomendaciones en un informe detallado.
 
 ## Contenido
 
@@ -30,7 +31,7 @@ Este proyecto consiste en el análisis exploratorio de datos de criptomonedas ut
 ## Requisitos
 
 - Python 3.11+
-- Bibliotecas requeridas: pandas, matplotlib, seaborn.
+- Bibliotecas requeridas: pandas, sqlalchemy,matplotlib, seaborn, mysql-connector-python, yfinance, pycoingecko.
 
 ## Configuración del Entorno
 
@@ -41,11 +42,13 @@ pip install -r requirements.txt
 
 ## Extraccion de datos
 La extraccion de datos se realizó desde las siguinetes APIs:
-1. API CoinGecko para extraer información sobre la moneda en sí misma (USD).
-2. API Binance para obtener los precios de apertura cierre, maximos minimos y spread.
-3. API CryptoCompare para obtener los precios históricos diarios de los bonos del tesoro de USA.
+1. API CoinGecko para extraer información sobre la moneda en sí misma (USD). El procedmiento lo puedes ver aca [API Coingecko](Notebook\data_extrac_API_Coingecko.ipynb)
+2. API Binance para obtener los precios de apertura cierre, maximos minimos y spread. [API Binance](Notebook\data_spread_API_Binance.ipynb)
+3. API yfinance para obtener los precios históricos diarios de los bonos del tesoro de USA. [API yfinance](Notebook\data_bonos_API_yfinance.ipynb)
 
 Estos datos luego almacenados en una base de datos con el nombre de `cripto_db` en MySQL, para luego ser consumidos en los analisis posteriores.
+
+## ***Estructura de los datos en cripto_db***
 
 ![Tablas y columnas almacenadas en la base de datos](./Images/tablas_db.png)
 
@@ -72,7 +75,7 @@ Estos datos luego almacenados en una base de datos con el nombre de `cripto_db` 
 
 ## Análisis Exploratorio
 
-El análisis exploratorio se realiza en el notebook `eda.ipynb`. Se exploran los datos de criptomonedas, se generan visualizaciones para comprender tendencias y patrones en los precios, capitalización de mercado, volumen y más.
+El análisis exploratorio se realiza en el notebook [eda.ipynb](Notebook/eda.ipynb) Se exploran los datos de criptomonedas, se generan visualizaciones para comprender tendencias y patrones en los precios, capitalización de mercado, volumen y más.
 
 ## Modelo de Predicción
 
