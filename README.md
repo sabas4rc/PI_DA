@@ -14,7 +14,7 @@
 
 # Contexto
 
-Somos Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc***, que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y al potencial de oportunidades de inversión para los clientes. La empresa, me asignó la tarea de realizar un análisis exhaustivo que permita entender mejor el mercado de criptomonedas para presentar los hallazgos y recomendaciones en un informe detallado.
+Como Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc***, que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y al potencial de oportunidades de inversión para los clientes. La empresa, me asignó la tarea de realizar un análisis exhaustivo que permita entender mejor el mercado de criptomonedas para presentar los hallazgos y recomendaciones en un informe detallado.
 
 
 ![logo intro](./Images/Acinvest_trans.png)
@@ -30,6 +30,7 @@ Somos Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc*
 - [KPIs](#kpis)
 - [Resultados y Visualizaciones](#resultados-y-visualizaciones)
 - [Conclusiones](#conclusiones)
+- [Bibliografía](#bibliografía)
 
 
 
@@ -142,3 +143,19 @@ El análisis en el contexto de las criptomonedas nos ha proporcionado una visió
 ## Resultados y Visualizaciones
 
 Los resultados del análisis exploratorio se presentan en forma de visualizaciones en los notebooks correspondientes. Además, se generan gráficos de diferentes tipos para mostrar tendencias, contribuciones y otros aspectos relevantes de los datos.
+
+## Bibliografía
+
+https://ambcrypto.com/bitcoian-all-factors-leading-up-to-the-worst-decline-of-2023/
+
+https://www.globenewswire.com/news-release/2023/05/01/2658095/28124/en/Europe-Blockchain-and-Cryptocurrency-Market-Analysis-Report-2023-Europe-Witnesses-Gradual-Adoption-of-Digital-Assets-Amidst-the-Fall-of-the-Crypto-Market.html
+
+https://home.treasury.gov/data/treasury-coupon-issues-and-corporate-bond-yield-curves/treasury-coupon-issues
+
+https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2023
+
+https://home.treasury.gov/data/treasury-coupon-issues-and-corporate-bond-yield-curves/treasury-coupon-issues
+
+https://es.statista.com/estadisticas/1236380/bitcoin-valor-de-capitalizacion-bursatil-a-nivel-mundial/
+
+https://www.criptonoticias.com/analisis-investigacion/altibajos-precio-bitcoin-historia/
