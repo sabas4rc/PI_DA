@@ -7,17 +7,11 @@
 </h1>
  
 # <h1 align="center">**`Cryptocurrency Market Data Analytics`**</h1>
-¡Bienvenidos al último proyecto individual 2 de la etapa de labs! En esta ocasión, deberán hacer un trabajo situándose en el rol de un ***Data Analyst***.
+¡Bienvenidos al último proyecto individual 2 de la etapa de labs! En esta ocasión, vamos a desarrollar un trabajo situándonos en el rol de un ***Data Analyst***.
 <p align='center'>
 <img src = 'https://www.clarin.com/img/2023/06/14/WJlAYJhAg_360x240__1.jpg' height = 200>
 <p>
 
-# Contexto
-
-Como Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc***, que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y al potencial de oportunidades de inversión para los clientes. La empresa, me asignó la tarea de realizar un análisis exhaustivo que permita entender mejor el mercado de criptomonedas para presentar los hallazgos y recomendaciones en un informe detallado.
-
-
-![logo intro](./Images/Acinvest_trans.png)
 
 ## Contenido
 
@@ -26,8 +20,8 @@ Como Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc**
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Extraccion de datos](#extraccion-de-datos)
 - [Análisis Exploratorio](#análisis-exploratorio)
-- [Modelo de Predicción](#modelo-de-predicción)
 - [KPIs](#kpis)
+- [Modelo de Predicción](#modelo-de-predicción)
 - [Resultados y Visualizaciones](#resultados-y-visualizaciones)
 - [Conclusiones](#conclusiones)
 - [Bibliografía](#bibliografía)
@@ -46,13 +40,30 @@ Como Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc**
 
 pip install -r requirements.txt
 
+# Contexto
+
+Como Analistas de Datos en la empresa de servicios financieros ***ACInvest Inc***, que se ha interesado en el mercado de criptomonedas debido a su crecimiento exponencial y al potencial de oportunidades de inversión para los clientes. La empresa, me asignó la tarea de realizar un análisis exhaustivo que permita entender mejor el mercado de criptomonedas para presentar los hallazgos y recomendaciones en un informe detallado.
+
+
+![logo intro](./Images/Acinvest_trans.png)
+
+
 ## Extraccion de datos
-La extraccion de datos se realizó desde las siguinetes APIs:
+La extraccion de datos se realizó desde las siguientes APIs:
 1. API CoinGecko para extraer información sobre la moneda en sí misma (USD). El procedimiento se detalla en este archivo [API Coingecko](Notebook/data_extrac_API_Coingecko.ipynb)
 2. API Binance para obtener los precios de apertura cierre, maximos minimos y spread. El procedimiento se detalla en este archivo [API Binance](Notebook/data_spread_API_Binance.ipynb)
 3. API yfinance para obtener los precios históricos diarios de los bonos del tesoro de USA. El procedimiento se detalla en este archivo [API yfinance](Notebook/data_bonos_API_yfinance.ipynb)
 
 Estos datos fueron almacenados en una base de datos con el nombre de `cripto_db` en MySQL, para luego ser consumidos en los analisis posteriores.
+
+Posteriormente los datos fueron revisados y tratados para ingestar una base de datos con la informacion de cada API, los archivos necesarios para esta transformacion estan separados por cada API y los podran consultan en los siguientes archivos:
+
+[Datos Coingecko](Notebook/cripto_database.ipynb)
+
+[Datos Binance](Notebook/spread_database.ipynb)
+
+[Datos Yahoo Finance](Notebook/bonos_database.ipynb)
+
 
 ## ***Estructura de los datos en cripto_db***
 
@@ -81,9 +92,11 @@ Estos datos fueron almacenados en una base de datos con el nombre de `cripto_db`
 
 ## Análisis Exploratorio
 
-El análisis exploratorio se realiza en el notebook [eda.ipynb](Notebook/eda.ipynb) Se exploran los datos de criptomonedas, se generan visualizaciones para comprender tendencias y patrones en los precios, capitalización de mercado, volumen y más.
+El análisis exploratorio lo van a encontrar en este archivo llamado [EDA](Notebook/eda.ipynb).
 
-En este análisis exploratorio, hemos examinado datos relacionados con criptomonedas, incluyendo precios, capitalización de mercado, volumen de negociación y otras métricas relevantes. Se han escogido las 10 principales monedas basadas en el mator volumen de capitalización. El objetivo es comprender mejor las tendencias y patrones en el mercado de criptomonedas a lo largo del tiempo. En nuestro análisis hemos incorporado además datos de los bonos del Tesoro de los estados unidos a fin de determinar la influencia de estos datos en el mercado ya que son un indice muy utilizado para valorar tanto el riesgo como el rendimiento en el mercado de inversiones.
+Se exploran los datos de criptomonedas, se generan visualizaciones para comprender tendencias y patrones en los precios, capitalización de mercado, volumen y más.
+
+En este análisis exploratorio, hemos examinado datos relacionados con criptomonedas, incluyendo precios, capitalización de mercado, volumen de negociación y otras métricas relevantes. Se han escogido las 10 principales monedas basadas en el mayor volumen de capitalización. El objetivo es comprender mejor las tendencias y patrones en el mercado de criptomonedas a lo largo del tiempo. En nuestro análisis hemos incorporado además datos de los bonos del Tesoro de los estados unidos a fin de determinar la influencia de estos datos en el mercado ya que son un indice muy utilizado para valorar tanto el riesgo como el rendimiento en el mercado de inversiones.
 
 **Exploración de Precios y Capitalización de Mercado**
 
@@ -103,7 +116,7 @@ Hemos explorado la contribución de cada criptomoneda al precio total del mercad
 
 ## Modelo de Predicción
 
-Este modelo indica que existe una relación negativa moderada entre el rendimiento de los bonos del Tesoro y el rendimiento de las criptomonedas. Esto significa que, en general, un aumento del rendimiento de los bonos del Tesoro se asociará con una disminución del rendimiento de las criptomonedas.
+El indica que existe una relación negativa moderada entre el rendimiento de los bonos del Tesoro y el rendimiento de las criptomonedas. Esto significa que, en general, un aumento del rendimiento de los bonos del Tesoro se asociará con una disminución del rendimiento de las criptomonedas.
 
 Esta relación negativa se puede explicar por varios factores. En primer lugar, los inversores suelen considerar las criptomonedas como una clase de activos de riesgo, similar a las acciones. Cuando los rendimientos de los bonos del Tesoro son bajos, los inversores están más dispuestos a asumir riesgos, lo que puede conducir a un aumento de los precios de las criptomonedas. Sin embargo, cuando los rendimientos de los bonos del Tesoro aumentan, los inversores pueden optar por vender sus acciones y comprar bonos del Tesoro, lo que puede conducir a una caída de los precios de las criptomonedas.
 
@@ -121,7 +134,7 @@ Aquí hay algunos ejemplos de cómo los inversores pueden utilizar esta informac
 ## KPIs
 
 ***Dominancia del Mercado:***
-La dominancia del mercado se refiere a la proporción del valor total del mercado de criptomonedas que corresponde a una criptomoneda específica. Puede proporcionar información sobre la posición relativa de una criptomoneda en comparación con el mercado en su conjunto. Una mayor dominancia podría indicar una criptomoneda más influyente en el mercado.
+La dominancia del mercado es la proporción del valor total del mercado de criptomonedas que corresponde a una criptomoneda específica. Puede proporcionar información sobre la posición relativa de una criptomoneda en comparación con el mercado en su conjunto. Una mayor dominancia podría indicar una criptomoneda más influyente en el mercado.
 La dominancia del mercado esta relacionada a la liquidez. La liquidez es la facilidad con la que un activo puede ser comprado o vendido sin afectar significativamente su precio. Una criptomoneda con una alta dominancia del mercado es más líquida, lo que significa que es más fácil comprar y vender sin afectar su precio. Esto es importante para los inversores porque les ayuda a reducir el riesgo de pérdidas.
 
 ***Rendimiento histórico:*** Este KPI es importante para comprender cómo una criptomoneda ha funcionado en el pasado. Sin embargo, es fundamental recordar que el rendimiento histórico no garantiza el rendimiento futuro, especialmente en el caso de las criptomonedas debido a su alta volatilidad y a otros factores.
@@ -133,12 +146,42 @@ La volatilidad es un indicador importante del riesgo asociado a una criptomoneda
 ***Capitalización de mercado:*** La capitalización de mercado esclave para ev aluar el tamaño relativo de una criptomoneda en comparación con otras. Puede proporcionar información sobre la adopción y la importancia de una criptomoneda en el mercado.
 La capitalización de mercado esta asociada al tamaño. El tamaño es la cantidad de dinero que está invertido. Una criptomoneda con una capitalización de mercado alta es más grande, lo que significa que es más probable que sea adoptada por los inversores y los consumidores.
 
-En resumen, los KPIs de criptomonedas son importantes para evaluar el potencial de una criptomoneda porque son indicadores de su popularidad, aceptación, rendimiento histórico, volatilidad y tamaño. Estos KPIs pueden ser utilizados por los inversores para tomar decisiones informadas sobre dónde invertir sus fondos.
+En resumen, estos KPIs de son importantes para evaluar el potencial de una criptomoneda porque son indicadores de su popularidad, aceptación, rendimiento histórico, volatilidad y tamaño. Estos KPIs pueden ser utilizados por los inversores para tomar decisiones informadas sobre dónde invertir sus fondos.
 
 
 ## Conclusiones
 
 El análisis en el contexto de las criptomonedas nos ha proporcionado una visión general de las tendencias, patrones y volatilidad en el mercado. Si bien el análisis nos ha permitido entender mejor el comportamiento pasado, es esencial reconocer la naturaleza especulativa y volátil de las criptomonedas al tomar decisiones financieras. Los modelos de predicción y análisis estadísticos deben utilizarse con precaución y junto con una comprensión completa del mercado y sus riesgos.
+
+
+Basándome en el análisis exploratorio y el modelo de predicción puedo concluir lo siguiente:
+
+En cuanto a dominación del mercado Bitcoin es la criptomoneda más dominante del mercado, con una capitalización de mercado de más de $700 mil millones. Ethereum es la segunda criptomoneda más dominante, con una capitalización de mercado de más de $300 mil millones. Las 10 principales criptomonedas representan más del 90% de la capitalización de mercado total del mercado de criptomonedas.
+
+El mercado de criptomonedas ha tenido un rendimiento impresionante en los últimos años. El precio del Bitcoin ha aumentado más de 100,000% desde su lanzamiento en 2009. Sin embargo, el rendimiento del mercado de criptomonedas ha sido mucho más volátil que el de otros mercados financieros.
+
+* **Bitcoin y Ethereum son las criptomonedas más importantes, en términos de precio, capitalización de mercado y volumen de negociación.**
+* **El mercado de criptomonedas es altamente volátil, con picos y valles frecuentes.**
+* **Los bonos del Tesoro de los Estados Unidos pueden tener un impacto significativo en el mercado de criptomonedas.**
+
+Por otra parte, el modelo de predicción indica que existe una relación negativa moderada entre el rendimiento de los bonos del Tesoro y el rendimiento de las criptomonedas. Esto significa que, en general, un aumento del rendimiento de los bonos del Tesoro se asociará con una disminución del rendimiento de las criptomonedas.
+
+Esta relación negativa se puede explicar por varios factores, como la consideración de las criptomonedas como una clase de activos de riesgo y la función de los bonos del Tesoro como un refugio seguro.
+
+Para los inversores, esta información puede ser útil para tomar decisiones informadas sobre el mercado de criptomonedas. Por ejemplo, un inversor que busque reducir su exposición al riesgo podría optar por vender sus criptomonedas si los rendimientos de los bonos del Tesoro aumentan.
+
+Sin embargo, es importante tener en cuenta que la relación entre el rendimiento de los bonos del Tesoro y el rendimiento de las criptomonedas no es perfecta. Hay otros factores que pueden afectar a los precios de las criptomonedas, como la inflación, la política monetaria de la Reserva Federal y la situación económica mundial.
+
+En general, el mercado de criptomonedas es un mercado complejo y volátil. Los inversores que buscan invertir en criptomonedas deben tener en cuenta todos los riesgos involucrados.
+
+Aquí hay algunos consejos para los inversores que buscan invertir en criptomonedas:
+
+* **Investigue a fondo antes de invertir.**
+* **Diversifique su cartera.**
+* **No invierta más dinero del que pueda permitirse perder.**
+* **Sea paciente.**
+
+El mercado de criptomonedas es todavía relativamente nuevo y está en constante evolución. Es importante estar preparado para la volatilidad y ser paciente con sus inversiones.
 
 ## Resultados y Visualizaciones
 
